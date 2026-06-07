@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.13.13 on win32)" generated="2026-06-02T23:35:30.599689" rpa="false" schemaversion="5">
+<suite id="s1" name="Login Tests" source="C:\Users\Dharmesh\PycharmProjects\PythonProject\tests\login_tests.robot">
+<kw name="Launch Browser" owner="common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-02T23:35:31.224096" level="INFO">Opening browser 'chrome' to base url 'https://www.flipkart.com'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-02T23:35:31.223611" elapsed="1.519698"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-02T23:35:32.744174" elapsed="2.441697"/>
+</kw>
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2026-06-02T23:35:35.186451" elapsed="0.002676"/>
+</kw>
+<status status="PASS" start="2026-06-02T23:35:31.222153" elapsed="3.967211"/>
+</kw>
+<test id="s1-t1" name="TC_001_Verify_Flipkart_Home_Page_Loads_Successfully" line="11">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-06-02T23:35:35.301033" level="INFO">Element 'xpath=//input[@placeholder='Search for Products, Brands and More']' is displayed.</msg>
+<arg>${SEARCH_BAR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-02T23:35:35.191131" elapsed="0.110079"/>
+</kw>
+<kw name="Capture Failure Screenshot" owner="common" type="TEARDOWN">
+<kw name="Get Time" owner="BuiltIn">
+<msg time="2026-06-02T23:35:35.305296" level="INFO">${timestamp} = 1780423535</msg>
+<var>${timestamp}</var>
+<arg>epoch</arg>
+<doc>Returns the given time in the requested format.</doc>
+<status status="PASS" start="2026-06-02T23:35:35.304356" elapsed="0.001030"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-06-02T23:35:35.744080" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="reports/screenshots/failure_1780423535.png"&gt;&lt;img src="reports/screenshots/failure_1780423535.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>reports/screenshots/failure_${timestamp}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-06-02T23:35:35.305667" elapsed="0.439158"/>
+</kw>
+<status status="PASS" start="2026-06-02T23:35:35.302947" elapsed="0.442272"/>
+</kw>
+<tag>smoke</tag>
+<status status="PASS" start="2026-06-02T23:35:35.189545" elapsed="0.557483"/>
+</test>
+<test id="s1-t2" name="TC_002_Verify_Login_Button_Is_Displayed" line="15">
+<kw name="Verify Login Button Visible" owner="LoginPage">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-06-02T23:35:35.866067" level="INFO">Element 'xpath=//span[normalize-space()='Login']' is displayed.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-02T23:35:35.752256" elapsed="0.114092"/>
+</kw>
+<status status="PASS" start="2026-06-02T23:35:35.751539" elapsed="0.115207"/>
+</kw>
+<kw name="Capture Failure Screenshot" owner="common" type="TEARDOWN">
+<kw name="Get Time" owner="BuiltIn">
+<msg time="2026-06-02T23:35:35.870390" level="INFO">${timestamp} = 1780423535</msg>
+<var>${timestamp}</var>
+<arg>epoch</arg>
+<doc>Returns the given time in the requested format.</doc>
+<status status="PASS" start="2026-06-02T23:35:35.869077" elapsed="0.001431"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-06-02T23:35:36.153835" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="reports/screenshots/failure_1780423535.png"&gt;&lt;img src="reports/screenshots/failure_1780423535.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>reports/screenshots/failure_${timestamp}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-06-02T23:35:35.871014" elapsed="0.282975"/>
+</kw>
+<status status="PASS" start="2026-06-02T23:35:35.868052" elapsed="0.286112"/>
+</kw>
+<tag>smoke</tag>
+<tag>ui</tag>
+<status status="PASS" start="2026-06-02T23:35:35.749615" elapsed="0.404877"/>
+</test>
+<test id="s1-t3" name="TC_003_Verify_User_Can_Login_With_Valid_Mobile_Number" line="19">
+<kw name="Login With Valid Mobile Number" owner="LoginPage">
+<kw name="Click Login Button" owner="LoginPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOGIN_BUTTON}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-02T23:35:36.156869" elapsed="0.023144"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${LOGIN_BUTTON}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2026-06-02T23:35:36.180345" elapsed="0.031109"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-02T23:35:38.212604" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-02T23:35:36.211804" elapsed="2.001110"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-02T23:35:38.213890" level="INFO">Clicking element 'xpath=//span[normalize-space()='Login']'.</msg>
+<msg time="2026-06-02T23:35:39.657739" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-02T23:35:39.658167" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;span class="v1zwn27" style="color:#333333ff"&gt;...&lt;/span&gt; is not clickable at point (1155, 98). Other element would receive the click: &lt;div class="mcO4kT RFBkxv" tabindex="-1"&gt;...&lt;/div&gt;
+  (Session info: chrome=148.0.7778.216); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff68ba47de5+14895]
+	chromedriver!GetHandleVerifier [0x7ff68ba47e50+14900]
+	chromedriver!(No symbol) [0x7ff68b7ad5ad]
+	chromedriver!(No symbol) [0x7ff68b80f3b5]
+	chromedriver!(No symbol) [0x7ff68b80cfca]
+	chromedriver!(No symbol) [0x7ff68b80a307]
+	chromedriver!(No symbol) [0x7ff68b8091b7]
+	chromedriver!(No symbol) [0x7ff68b7fbce6]
+	chromedriver!(No symbol) [0x7ff68b83005a]
+	chromedriver!(No symbol) [0x7ff68b7fb566]
+	chromedriver!(No symbol) [0x7ff68b85486f]
+	chromedriver!(No symbol) [0x7ff68b7f9df8]
+	chromedriver!(No symbol) [0x7ff68b7face3]
+	chromedriver!GetHandleVerifier [0x7ff68bd5cc49+3296f9]
+	chromedriver!GetHandleVerifier [0x7ff68bd57375+323e25]
+	chromedriver!GetHandleVerifier [0x7ff68bd7bc82+348732]
+	chromedriver!GetHandleVerifier [0x7ff68ba66045+32af5]
+	chromedriver!GetHandleVerifier [0x7ff68ba6ecec+3b79c]
+	chromedriver!GetHandleVerifier [0x7ff68ba51bc4+1e674]
+	chromedriver!GetHandleVerifier [0x7ff68ba51d54+1e804]
+	chromedriver!GetHandleVerifier [0x7ff68ba360e7+2b97]
+	KERNEL32!BaseThreadInitThunk [0x7fff35cce8d7+17]
+	ntdll!RtlUserThreadStart [0x7fff368ac3fc+2c]
+</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2026-06-02T23:35:38.213342" elapsed="1.499818">ElementClickInterceptedException: Message: element click intercepted: Element &lt;span class="v1zwn27" style="color:#333333ff"&gt;...&lt;/span&gt; is not clickable at point (1155, 98). Other element would receive the click: &lt;div class="mcO4kT RFBkxv" tabindex="-1"&gt;...&lt;/div&gt;
+  (Session info: chrome=148.0.7778.216); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff68ba47de5+14895]
+	chromedriver!GetHandleVerifier [0x7ff68ba47e50+14900]
+	chromedriver!(No symbol) [0x7ff68b7ad5ad]
+	chromedriver!(No symbol) [0x7ff68b80f3b5]
+	chromedriver!(No symbol) [0x7ff68b80cfca]
+	chromedriver!(No symbol) [0x7ff68b80a307]
+	chromedriver!(No symbol) [0x7ff68b8091b7]
+	chromedriver!(No symbol) [0x7ff68b7fbce6]
+	chromedriver!(No symbol) [0x7ff68b83005a]
+	chromedriver!(No symbol) [0x7ff68b7fb566]
+	chromedriver!(No symbol) [0x7ff68b85486f]
+	chromedriver!(No symbol) [0x7ff68b7f9df8]
+	chromedriver!(No symbol) [0x7ff68b7face3]
+	chromedriver!GetHandleVerifier [0x7ff68bd5cc49+3296f9]
+	chromedriver!GetHandleVerifier [0x7ff68bd57375+323e25]
+	chromedriver!GetHandleVerifier [0x7ff68bd7bc82+348732]
+	chromedriver!GetHandleVerifier [0x7ff68ba66045+32af5]
+	chromedriver!GetHandleVerifier [0x7ff68ba6ecec+3b79c]
+	chromedriver!GetHandleVerifier [0x7ff68ba51bc4+1e674]
+	chromedriver!GetHandleVerifier [0x7ff68ba51d54+1e804]
+	chromedriver!GetHandleVerifier [0x7ff68ba360e7+2b97]
+	KERNEL32!BaseThreadInitThunk [0x7fff35cce8d7+17]
+	ntdll!RtlUserThreadStart [0x7fff368ac3fc+2c]
+</status>
+</kw>
+<status status="FAIL" start="2026-06-02T23:35:36.156447" elapsed="3.557489">ElementClickInterceptedException: Message: element click intercepted: Element &lt;span class="v1zwn27" style="color:#333333ff"&gt;...&lt;/span&gt; is not clickable at point (1155, 98). Other element would receive the click: &lt;div class="mcO4kT RFBkxv" tabindex="-1"&gt;...&lt;/div&gt;
+  (Session info: chrome=148.0.7778.216); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff68ba47de5+14895]
+	chromedriver!GetHandleVerifier [0x7ff68ba47e50+14900]
+	chromedriver!(No symbol) [0x7ff68b7ad5ad]
+	chromedriver!(No symbol) [0x7ff68b80f3b5]
+	chromedriver!(No symbol) [0x7ff68b80cfca]
+	chromedriver!(No symbol) [0x7ff68b80a307]
+	chromedriver!(No symbol) [0x7ff68b8091b7]
+	chromedriver!(No symbol) [0x7ff68b7fbce6]
+	chromedriver!(No symbol) [0x7ff68b83005a]
+	chromedriver!(No symbol) [0x7ff68b7fb566]
+	chromedriver!(No symbol) [0x7ff68b85486f]
+	chromedriver!(No symbol) [0x7ff68b7f9df8]
+	chromedriver!(No symbol) [0x7ff68b7face3]
+	chromedriver!GetHandleVerifier [0x7ff68bd5cc49+3296f9]
+	chromedriver!GetHandleVerifier [0x7ff68bd57375+323e25]
+	chromedriver!GetHandleVerifier [0x7ff68bd7bc82+348732]
+	chromedriver!GetHandleVerifier [0x7ff68ba66045+32af5]
+	chromedriver!GetHandleVerifier [0x7ff68ba6ecec+3b79c]
+	chromedriver!GetHandleVerifier [0x7ff68ba51bc4+1e674]
+	chromedriver!GetHandleVerifier [0x7ff68ba51d54+1e804]
+	chromedriver!GetHandleVerifier [0x7ff68ba360e7+2b97]
+	KERNEL32!BaseThreadInitThunk [0x7fff35cce8d7+17]
+	ntdll!RtlUserThreadStart [0x7fff368ac3fc+2c]
+</status>
+</kw>
+<kw name="Verify Login Popup Displayed" owner="LoginPage">
+<status status="NOT RUN" start="2026-06-02T23:35:39.714392" elapsed="0.000079"/>
+</kw>
+<kw name="Enter Mobile Number" owner="LoginPage">
+<arg>${VALID_MOBILE}</arg>
+<status status="NOT RUN" start="2026-06-02T23:35:39.714711" elapsed="0.000083"/>
+</kw>
+<kw name="Click Request OTP" owner="LoginPage">
+<status status="NOT RUN" start="2026-06-02T23:35:39.715069" elapsed="0.000051"/>
+</kw>
+<kw name="Verify User Logged In Successfully" owner="LoginPage">
+<status status="NOT RUN" start="2026-06-02T23:35:39.715301" elapsed="0.000048"/>
+</kw>
+<status status="FAIL" start="2026-06-02T23:35:36.155945" elapsed="3.559642">ElementClickInterceptedException: Message: element click intercepted: Element &lt;span class="v1zwn27" style="color:#333333ff"&gt;...&lt;/span&gt; is not clickable at point (1155, 98). Other element would receive the click: &lt;div class="mcO4kT RFBkxv" tabindex="-1"&gt;...&lt;/div&gt;
+  (Session info: chrome=148.0.7778.216); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff68ba47de5+14895]
+	chromedriver!GetHandleVerifier [0x7ff68ba47e50+14900]
+	chromedriver!(No symbol) [0x7ff68b7ad5ad]
+	chromedriver!(No symbol) [0x7ff68b80f3b5]
+	chromedriver!(No symbol) [0x7ff68b80cfca]
+	chromedriver!(No symbol) [0x7ff68b80a307]
+	chromedriver!(No symbol) [0x7ff68b8091b7]
+	chromedriver!(No symbol) [0x7ff68b7fbce6]
+	chromedriver!(No symbol) [0x7ff68b83005a]
+	chromedriver!(No symbol) [0x7ff68b7fb566]
+	chromedriver!(No symbol) [0x7ff68b85486f]
+	chromedriver!(No symbol) [0x7ff68b7f9df8]
+	chromedriver!(No symbol) [0x7ff68b7face3]
+	chromedriver!GetHandleVerifier [0x7ff68bd5cc49+3296f9]
+	chromedriver!GetHandleVerifier [0x7ff68bd57375+323e25]
+	chromedriver!GetHandleVerifier [0x7ff68bd7bc82+348732]
+	chromedriver!GetHandleVerifier [0x7ff68ba66045+32af5]
+	chromedriver!GetHandleVerifier [0x7ff68ba6ecec+3b79c]
+	chromedriver!GetHandleVerifier [0x7ff68ba51bc4+1e674]
+	chromedriver!GetHandleVerifier [0x7ff68ba51d54+1e804]
+	chromedriver!GetHandleVerifier [0x7ff68ba360e7+2b97]
+	KERNEL32!BaseThreadInitThunk [0x7fff35cce8d7+17]
+	ntdll!RtlUserThreadStart [0x7fff368ac3fc+2c]
+</status>
+</kw>
+<kw name="Capture Failure Screenshot" owner="common" type="TEARDOWN">
+<kw name="Get Time" owner="BuiltIn">
+<msg time="2026-06-02T23:35:39.717883" level="INFO">${timestamp} = 1780423539</msg>
+<var>${timestamp}</var>
+<arg>epoch</arg>
+<doc>Returns the given time in the requested format.</doc>
+<status status="PASS" start="2026-06-02T23:35:39.717130" elapsed="0.000831"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-06-02T23:35:39.959556" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="reports/screenshots/failure_1780423539.png"&gt;&lt;img src="reports/screenshots/failure_1780423539.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>reports/screenshots/failure_${timestamp}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-06-02T23:35:39.718293" elapsed="0.241494"/>
+</kw>
+<status status="PASS" start="2026-06-02T23:35:39.716516" elapsed="0.243487"/>
+</kw>
+<tag>regression</tag>
+<tag>smoke</tag>
+<status status="FAIL" start="2026-06-02T23:35:36.155230" elapsed="3.807093">ElementClickInterceptedException: Message: element click intercepted: Element &lt;span class="v1zwn27" style="color:#333333ff"&gt;...&lt;/span&gt; is not clickable at point (1155, 98). Other element would receive the click: &lt;div class="mcO4kT RFBkxv" tabindex="-1"&gt;...&lt;/div&gt;
+  (Session info: chrome=148.0.7778.216); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff68ba47de5+14895]
+	chromedriver!GetHandleVerifier [0x7ff68ba47e50+14900]
+	chromedriver!(No symbol) [0x7ff68b7ad5ad]
+	chromedriver!(No symbol) [0x7ff68b80f3b5]
+	chromedriver!(No symbol) [0x7ff68b80cfca]
+	chromedriver!(No symbol) [0x7ff68b80a307]
+	chromedriver!(No symbol) [0x7ff68b8091b7]
+	chromedriver!(No symbol) [0x7ff68b7fbce6]
+	chromedriver!(No symbol) [0x7ff68b83005a]
+	chromedriver!(No symbol) [0x7ff68b7fb566]
+	chromedriver!(No symbol) [0x7ff68b85486f]
+	chromedriver!(No symbol) [0x7ff68b7f9df8]
+	chromedriver!(No symbol) [0x7ff68b7face3]
+	chromedriver!GetHandleVerifier [0x7ff68bd5cc49+3296f9]
+	chromedriver!GetHandleVerifier [0x7ff68bd57375+323e25]
+	chromedriver!GetHandleVerifier [0x7ff68bd7bc82+348732]
+	chromedriver!GetHandleVerifier [0x7ff68ba66045+32af5]
+	chromedriver!GetHandleVerifier [0x7ff68ba6ecec+3b79c]
+	chromedriver!GetHandleVerifier [0x7ff68ba51bc4+1e674]
+	chromedriver!GetHandleVerifier [0x7ff68ba51d54+1e804]
+	chromedriver!GetHandleVerifier [0x7ff68ba360e7+2b97]
+	KERNEL32!BaseThreadInitThunk [0x7fff35cce8d7+17]
+	ntdll!RtlUserThreadStart [0x7fff368ac3fc+2c]
+</status>
+</test>
+<kw name="Close Browser Session" owner="common" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-02T23:35:39.968247" elapsed="3.004206"/>
+</kw>
+<status status="PASS" start="2026-06-02T23:35:39.967765" elapsed="3.004969"/>
+</kw>
+<status status="FAIL" start="2026-06-02T23:35:30.604497" elapsed="12.368338"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">regression</stat>
+<stat pass="2" fail="1" skip="0">smoke</stat>
+<stat pass="1" fail="0" skip="0">ui</stat>
+</tag>
+<suite>
+<stat name="Login Tests" id="s1" pass="2" fail="1" skip="0">Login Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
